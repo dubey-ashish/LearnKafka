@@ -14,6 +14,8 @@ separated from @RestController class file.
 @Service
 public class KafkaService
 {
+
+    //Redis project had RedisTemplate
     @Autowired
     private KafkaTemplate<String,String> kafkaTemplate;
 
@@ -29,6 +31,7 @@ public class KafkaService
     This is the main content that you want to transmit to Kafka consumers.
 
      */
+
     public boolean updateLocation (String location)
     {
         this.kafkaTemplate.send(Constants.Location_Topic_Name,location);
